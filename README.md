@@ -44,16 +44,13 @@ scale-free elasticity and the spread is symmetric in relative returns.
 **Step 1 — Hedge ratio estimation (OLS):**
 
 $$
-\log P^A_t = \alpha + \beta \log P^B_t + \varepsilon_t
-\quad\Rightarrow\quad
-\hat\beta = \frac{\mathrm{Cov}(\log P^A, \log P^B)}{\mathrm{Var}(\log P^B)}
+\log P^A_t = \alpha + \beta \log P^B_t + \varepsilon_t\quad\Rightarrow\quad\hat\beta = \frac{\mathrm{Cov}(\log P^A, \log P^B)}{\mathrm{Var}(\log P^B)}
 $$
 
 **Step 2 — Stationarity of residuals (Augmented Dickey-Fuller):**
 
 $$
-\Delta \hat\varepsilon_t = \gamma\, \hat\varepsilon_{t-1}
- + \sum_{i=1}^{p} \phi_i\, \Delta\hat\varepsilon_{t-i} + u_t
+\Delta \hat\varepsilon_t = \gamma \hat\varepsilon_{t-1} + \sum_{i=1}^{p} \phi_i\Delta\hat\varepsilon_{t-i} + u_t
 $$
 
 We test $H_0: \gamma = 0$ (unit root, no cointegration) against $H_1: \gamma < 0$.
@@ -102,15 +99,11 @@ Signals are shifted by one bar before execution to avoid **look-ahead bias**.
 With daily strategy returns $r_t$ net of costs, and $A = 252$ trading days:
 
 $$
-\text{Sharpe} = \sqrt{A}\;\frac{\mathbb{E}[r_t] - r_f/A}{\sigma(r_t)}
-\qquad
-\text{Sortino} = \sqrt{A}\;\frac{\mathbb{E}[r_t] - r_f/A}{\sigma(r_t \mid r_t < 0)}
+\text{Sharpe} = \sqrt{A}\;\frac{\mathbb{E}[r_t] - r_f/A}{\sigma(r_t)}\qquad\text{Sortino} = \sqrt{A}\;\frac{\mathbb{E}[r_t] - r_f/A}{\sigma(r_t \mid r_t < 0)}
 $$
 
 $$
-\text{MaxDD} = \min_t \left( \frac{E_t}{\max_{s \le t} E_s} - 1 \right),
-\qquad
-\text{Calmar} = \frac{\text{CAGR}}{\lvert\text{MaxDD}\rvert}
+\text{MaxDD} = \min_t \left( \frac{E_t}{\max_{s \le t} E_s} - 1 \right),\qquad\text{Calmar} = \frac{\text{CAGR}}{\lvert\text{MaxDD}\rvert}
 $$
 
 Transaction costs are proportional: each unit of turnover is charged
@@ -136,7 +129,7 @@ pairs-trading-cointegration/
 ## Installation
 
 ```bash
-git clone https://github.com/<your-username>/pairs-trading-cointegration.git
+git clone https://github.com/<Xemso>/pairs-trading-cointegration.git
 cd pairs-trading-cointegration
 python -m venv .venv
 source .venv/bin/activate        # Windows: .venv\Scripts\activate
