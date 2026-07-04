@@ -54,7 +54,7 @@ $$
 $$
 
 We test $H_0: \gamma = 0$ (unit root, no cointegration) against $H_1: \gamma < 0$.
-The pair is retained if the ADF p-value is below a threshold (default $5\%$).
+The pair is retained if the ADF p-value is below a threshold (default 5%).
 Note: because $\hat\varepsilon_t$ is *estimated*, standard ADF critical values are slightly
 too liberal (Phillips-Ouliaris correction) — an acknowledged limitation discussed in
 *Next Steps*.
@@ -64,11 +64,11 @@ too liberal (Phillips-Ouliaris correction) — an acknowledged limitation discus
 A stationary spread is naturally modeled as an OU process:
 
 $$
-dS_t = \theta(\mu - S_t)\,dt + \sigma\, dW_t
+dS_t = \theta(\mu - S_t) dt + \sigma dW_t
 $$
 
 The **half-life of mean reversion** follows from the discretized AR(1) representation
-$S_t = a + b\,S_{t-1} + u_t$ with $b = e^{-\theta \Delta t}$:
+$S_t = a + b S_{t-1} + u_t$ with $b = e^{-\theta \Delta t}$:
 
 $$
 t_{1/2} = \frac{\ln 2}{\theta} = -\frac{\ln 2}{\ln b}
