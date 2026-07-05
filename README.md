@@ -4,6 +4,8 @@ A research-grade implementation of a market-neutral pairs trading strategy built
 Engle-Granger two-step cointegration framework, with a fully vectorized event-driven-style
 backtester including transaction costs and institutional performance metrics.
 
+![Out-of-sample equity curve](docs/GS-MS_equity_drawdown.png)
+
 ---
 
 ## Executive Summary
